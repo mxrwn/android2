@@ -26,7 +26,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.firestore.FirebaseFirestore
 import com.mxrwn.androidfinal.R
+import com.mxrwn.androidfinal.RecyclerAdapter
 import com.mxrwn.androidfinal.databinding.FragmentDashboardBinding
 import com.mxrwn.androidfinal.databinding.FragmentMapsBinding
 
@@ -35,10 +37,7 @@ class MapsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var lastlocation : Location;
     private lateinit var fusedLocation: FusedLocationProviderClient
-
-    private fun MapActivation() {
-
-    }
+    var db = FirebaseFirestore.getInstance()
 
     private val callback = OnMapReadyCallback { googleMap ->
         fusedLocation = FusedLocationProviderClient(requireActivity())
@@ -52,13 +51,21 @@ class MapsFragment : Fragment() {
         }
 
 
+        db.collection("places")
+            .get()
+            .addOnSuccessListener() { document ->
+                for (data in document.documents){
+                    val currentLong = LatLng(data["lat"].toString().toDouble(), data["long"].toString().toDouble())
+                    googleMap.addMarker(MarkerOptions().position(currentLong).title(data["place"].toString()))
+                }
+
+            }
+
 
         //fusedLocation.lastLocation.addOnSuccessListener(requireActivity()) {
             //if(it != null){
                 //lastlocation = it
-                //val currentLong = LatLng(it.latitude, it.longitude)
-                //googleMap.addMarker(MarkerOptions().position(currentLong).title("Marker in Sydney"))
-                //googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLong, 12f))
+
             //}
         //}
 

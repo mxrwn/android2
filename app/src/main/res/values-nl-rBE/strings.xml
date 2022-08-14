@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ANDROID FINAL</string>
+    <string name="prompt_email">Email adres</string>
+    <string name="prompt_password">Wachtwoord</string>
+    <string name="already_account"><u>Je hebt al een account?</u></string>
+    <string name="no_account"><u>Nieuw hier?</u></string>
+    <string name="action_sign_in">Inloggen of registreren</string>
+    <string name="action_sign_in_short">Log In</string>
+</resources>
