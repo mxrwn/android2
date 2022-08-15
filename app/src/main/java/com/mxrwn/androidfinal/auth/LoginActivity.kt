@@ -16,7 +16,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("teest")
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -34,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         binding.textView3.setOnClickListener{
-            Log.d("LOGIN","test")
             val intent = Intent(this, RegisterActivity::class.java)
             this.startActivity(intent)
         }

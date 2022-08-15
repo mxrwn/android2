@@ -67,15 +67,12 @@ class AddFragment : Fragment() {
 
         binding.addImage.setOnClickListener {
             observer.selectImage()
-
-            Log.d("LAT", lifecycle.currentState.toString())
         }
 
         binding.button2.setOnClickListener {
             @SuppressLint("MissingPermission")
             if(isLocationPermissionGranted()){
                 fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-                Log.d("7889999", isLocationPermissionGranted().toString())
                 fusedLocationClient.getCurrentLocation(LocationRequest.QUALITY_HIGH_ACCURACY, @SuppressLint(
                     "MissingPermission"
                 )
@@ -92,8 +89,6 @@ class AddFragment : Fragment() {
                             val lon = location.longitude
                             binding.editTextNumber.text = Editable.Factory.getInstance().newEditable(location.latitude.toString())
                             binding.editTextNumber2.text = Editable.Factory.getInstance().newEditable(location.longitude.toString())
-
-                            Log.d("LAT", observer.imageUri.toString())
                         }
 
                     }
@@ -172,14 +167,11 @@ class MyLifecycleObserver(private val registry : ActivityResultRegistry)
                 imageUri = it
             }
             val uploadTask = uri?.let { riversRef.putFile(it) }
-            Log.d("fdsgdfgds", uploadTask.toString())
             // Register observers to listen for when the download is done or if it fails
             if (uploadTask != null) {
                 uploadTask.addOnFailureListener {
                     // Handle unsuccessful uploads
-                    Log.d("CASSé", "TOUT CASSé")
                 }.addOnSuccessListener { taskSnapshot ->
-                    Log.d("QUOI", taskSnapshot.uploadSessionUri.toString())
                     // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
                     // ...
 

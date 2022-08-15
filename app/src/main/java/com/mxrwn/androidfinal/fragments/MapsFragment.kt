@@ -61,14 +61,6 @@ class MapsFragment : Fragment() {
 
             }
 
-
-        //fusedLocation.lastLocation.addOnSuccessListener(requireActivity()) {
-            //if(it != null){
-                //lastlocation = it
-
-            //}
-        //}
-
     }
     @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,7 +71,6 @@ class MapsFragment : Fragment() {
                 fusedLocation.lastLocation.addOnSuccessListener(requireActivity()) {
                     lastlocation = it
                     val currentLong = LatLng(it.latitude, it.longitude)
-                    Log.d("MAAAAAAAP", currentLong.toString())
                     OnMapReadyCallback { googleMap ->
                         googleMap.addMarker(MarkerOptions().position(currentLong).title("Marker in Sydney"))
                         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLong, 12f))

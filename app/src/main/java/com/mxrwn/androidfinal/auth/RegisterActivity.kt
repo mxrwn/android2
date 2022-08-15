@@ -17,7 +17,6 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding;
     private lateinit var firebaseAuth: FirebaseAuth;
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("TEST","test")
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         firebaseAuth = FirebaseAuth.getInstance()
@@ -41,12 +40,10 @@ class RegisterActivity : AppCompatActivity() {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
                         }
                     }
-                    Log.d("CLICK","nice");
                 }else{
                     Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 }
             }else{
-                Log.d("CACA","nice");
             }
 
         }

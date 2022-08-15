@@ -28,11 +28,9 @@ class MainActivity : AppCompatActivity() {
     private val mapFragment = MapsFragment();
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        print("test")
         firebaseAuth = FirebaseAuth.getInstance()
         val currentUser = firebaseAuth.currentUser
         val email = currentUser?.email
-        Log.d("MAIN", email!!)
         setContentView(R.layout.activity_main)
         //binding = ActivityMainBinding.inflate(layoutInflater)
         //replaceFragment(dashboardFragment)
