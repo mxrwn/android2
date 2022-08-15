@@ -108,6 +108,7 @@ class AddFragment : Fragment() {
             place["place"] = binding.editTextTextPersonName2.text.toString()
             place["long"] = binding.editTextNumber.text.toString()
             place["lat"] = binding.editTextNumber2.text.toString()
+            place["image"] = observer.imageUri.toString()
             firebaseAuth = FirebaseAuth.getInstance()
             val currentUser = firebaseAuth.currentUser
             place["user"] = currentUser?.email.toString()
@@ -167,6 +168,9 @@ class MyLifecycleObserver(private val registry : ActivityResultRegistry)
             val storageRef: StorageReference = FirebaseStorage.getInstance().reference;
 
             val riversRef = storageRef.child("images/test.jpg")
+            riversRef.downloadUrl.addOnSuccessListener {
+                imageUri = it
+            }
             val uploadTask = uri?.let { riversRef.putFile(it) }
             Log.d("fdsgdfgds", uploadTask.toString())
             // Register observers to listen for when the download is done or if it fails
@@ -179,9 +183,11 @@ class MyLifecycleObserver(private val registry : ActivityResultRegistry)
                     // taskSnapshot.metadata contains file metadata such as size, content-type, etc.
                     // ...
 
+                }.addOnCompleteListener{
+                    Log.d("QUOI", it.result.uploadSessionUri.toString())
                 }
             }
-                imageUri = uri
+
 
 
         }

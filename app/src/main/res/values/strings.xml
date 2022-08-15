@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ANDROID FINAL</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_login">BP</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="already_account"><u>Already an account?</u></string>

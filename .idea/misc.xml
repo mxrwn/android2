@@ -3,11 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/_/android2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.144" />
+        <entry key="..\:/_/android2/app/src/main/res/drawable/ic_dashboard.xml" value="0.1975" />
+        <entry key="..\:/_/android2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1975" />
+        <entry key="..\:/_/android2/app/src/main/res/drawable/layout_bottomnav.xml" value="0.1" />
+        <entry key="..\:/_/android2/app/src/main/res/layout-land/activity_main.xml" value="0.15123456790123457" />
+        <entry key="..\:/_/android2/app/src/main/res/layout-land/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/_/android2/app/src/main/res/layout-land/layout_main.xml" value="0.15123456790123457" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/activity_register.xml" value="0.1796875" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/card_layout.xml" value="0.1" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_add.xml" value="0.33" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_dashboard.xml" value="0.17617753623188406" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_languages.xml" value="0.1" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_maps.xml" value="0.2128623188405797" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_my_places.xml" value="0.25" />
+        <entry key="..\:/_/android2/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/_/android2/app/src/main/res/menu/menu.xml" value="0.21302083333333333" />
+        <entry key="..\:/_/android2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.144" />
+        <entry key="..\:/_/android2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.144" />
         <entry key="app/src/main/res/drawable/ic_map.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_person.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/layout_input.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3569021916043931" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.34784240722656257" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.28380889892578126" />
         <entry key="app/src/main/res/layout/fragment_add.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />

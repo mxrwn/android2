@@ -37,7 +37,14 @@
         android:id="@+id/profile"
         android:name="com.mxrwn.androidfinal.fragments.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_myPlacesFragment"
+            app:destination="@id/myPlacesFragment" />
+        <action
+            android:id="@+id/action_profile_to_languagesFragment"
+            app:destination="@id/languagesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.mxrwn.androidfinal.DetailFragment"
@@ -45,4 +52,17 @@
         tools:layout="@layout/fragment_detail" >
         <argument android:name="place" />
     </fragment>
+    <fragment
+        android:id="@+id/myPlacesFragment"
+        android:name="com.mxrwn.androidfinal.settings.MyPlacesFragment"
+        android:label="MyPlacesFragment" >
+        <action
+            android:id="@+id/action_myPlacesFragment_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/languagesFragment"
+        android:name="com.mxrwn.androidfinal.settings.LanguagesFragment"
+        android:label="fragment_languages"
+        tools:layout="@layout/fragment_languages" />
 </navigation>

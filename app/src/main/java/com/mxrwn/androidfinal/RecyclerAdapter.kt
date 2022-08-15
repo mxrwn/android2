@@ -1,19 +1,21 @@
 package com.mxrwn.androidfinal
 
-import android.util.Log
+import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.DocumentSnapshot
 import com.mxrwn.androidfinal.fragments.DashboardFragmentDirections
 
-class RecyclerAdapter(private val dataSet: MutableList<DocumentSnapshot>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+class RecyclerAdapter(private val dataSet: MutableList<DocumentSnapshot>, private val context: Context): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -40,11 +42,17 @@ class RecyclerAdapter(private val dataSet: MutableList<DocumentSnapshot>): Recyc
 
         holder.itemTitle.text = dataSet[position]["place"].toString()
         holder.itemDetail.text = dataSet[position]["user"].toString()
+        if(dataSet[position]["image"] != null){
+            Glide.with(context).load(dataSet[position]["image"]).into(holder.itemImage);
+
+        }
         holder.itemTitle.setOnClickListener {
+
             //val bundle = bundleOf(Pair("place", holder.itemTitle.text.toString()),
             //    Pair("user", holder.itemDetail.text.toString()))
-            //val directions = DashboardFragmentDirections.actionDashboardToDetailFragment(bundle.toString())
-            //it.findNavController().navigate(directions)
+
+            val directions = DashboardFragmentDirections.actionDashboardToDetailFragment("yredsy")
+            it.findNavController().navigate(directions)
         }
     }
 
